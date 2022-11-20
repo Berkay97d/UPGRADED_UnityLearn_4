@@ -4,26 +4,39 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-    [SerializeField] private GameObject prefab;
-    private Vector3 spawnPosition;
-    private PlayerController playerController;
     
-    
-    void Start()
+    public GameObject[] obstaclePrefabs;
+    public float spawnRatePerSecond;
+
+
+    private void Start()
     {
-        playerController = GameObject.Find("Player").GetComponent<PlayerController>();
-        
-        InvokeRepeating("SpawnObstacles",2,2);
+        StartCoroutine(SpawnRoutine());
     }
 
-    
-    void SpawnObstacles()
+    private void Update()
     {
-        if (!playerController.isGameOver)
+       
+    }
+
+
+    private IEnumerator SpawnRoutine()
+    {
+        var waitTime = 1f / spawnRatePerSecond;
+        
+        while (!UIManager.isGameOver)
         {
-            int randomX = Random.Range(18, 28);
-            spawnPosition = new Vector3(randomX, 0, 0); 
-            Instantiate(prefab, spawnPosition, prefab.transform.rotation);
+            yield return new WaitForSeconds(waitTime);
+            
+            SpawnRandomObstacle();
         }
+    }
+
+
+    private void SpawnRandomObstacle()
+    {
+        var randomObstacleIndex = Random.Range(0, obstaclePrefabs.Length);
+        var randomObstaclePrefab = obstaclePrefabs[randomObstacleIndex];
+        Instantiate(randomObstaclePrefab, transform.position, Quaternion.identity, transform);
     }
 }

@@ -270,7 +270,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 79.099976, y: -23.75}
+  m_AnchoredPosition: {x: 79.1001, y: -23.75}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &161920216
@@ -1803,7 +1803,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55736bb0780eb1e479467623bc723b91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 250994176844474487, guid: b639bd20b876e4e4eb17c442804e5193, type: 3}
+  obstaclePrefabs:
+  - {fileID: 151586, guid: 95927758d3a4cef4ba6c4318f06876fd, type: 3}
+  - {fileID: 194656, guid: cb04eea70ee14ab49b68d12e2cbbf680, type: 3}
+  - {fileID: 134104, guid: 71782582b9d2cac4cba5251a3b767d13, type: 3}
+  - {fileID: 1732272334065596, guid: cdcb19fde9e8cba40b7bff849baf2c1b, type: 3}
+  - {fileID: 181666, guid: ee7d0c4ddd804dd4e95f705d43c9135e, type: 3}
+  - {fileID: 151096, guid: 367149bd17c4d4d4e8868ec6a5cf8d45, type: 3}
+  - {fileID: 145980, guid: 84a102c1bf03d0a43bd4b342185c2811, type: 3}
+  - {fileID: 114304, guid: 3daef342e8f3f9548b04424eac7d4d0d, type: 3}
+  spawnRatePerSecond: 1
 --- !u!4 &1928310677
 Transform:
   m_ObjectHideFlags: 0
@@ -1812,7 +1821,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1928310675}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.07809305, y: 1.305079, z: -0.23866013}
+  m_LocalPosition: {x: 36.7, y: 1.305079, z: -0.23866013}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

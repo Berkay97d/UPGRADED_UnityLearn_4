@@ -82,6 +82,7 @@ public class PlayerController : MonoBehaviour
         {
             uıManager.ActivateLoseCanvas();
             isGameOver = true;
+            UIManager.isGameOver = true;
             Debug.Log("game over");
             playerAnimator.SetBool(DeathB,true); //Ölme animasyonunu triggerlıyoruz
             playerAnimator.SetInteger(DeathTypeİnt,1); //Ölme animasyonu tipini seçiyoruz, animatörden bakabilirsin 2 tip var

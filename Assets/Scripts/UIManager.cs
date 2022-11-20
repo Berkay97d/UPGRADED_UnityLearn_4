@@ -18,6 +18,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Canvas endGame;
 
 
+    public static bool isGameOver = false;
+
     private void Update()
     {
         HandleUI();
@@ -49,6 +51,7 @@ public class UIManager : MonoBehaviour
 
     public void RestartGame()
     {
+        isGameOver = false;
         score = 0;
         SceneManager.LoadScene(0);
     }
